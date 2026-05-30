@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.lifeprotector.com/sitemap.xml

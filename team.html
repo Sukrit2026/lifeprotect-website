@@ -25,6 +25,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/lifeprotect-logo.png">
+
     <!-- Google Analytics (replace G-XXXXXXXXXX with your tracking ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -253,7 +256,7 @@
         </div>
         <form class="newsletter__form" action="https://formspree.io/f/mvgkjqwb" method="POST" aria-label="Newsletter subscription">
           <label for="newsletter-email" class="sr-only">Email address</label>
-          <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
+          <input type="email" id="newsletter-email" name="email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
           <button type="submit" class="btn btn--primary">Subscribe</button>
         </form>
       </div>
@@ -318,6 +321,6 @@
   </noscript>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

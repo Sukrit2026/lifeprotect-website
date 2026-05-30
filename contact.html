@@ -25,6 +25,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/lifeprotect-logo.png">
+
     <!-- Google Analytics (replace G-XXXXXXXXXX with your tracking ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -126,7 +129,7 @@
         <div class="contact__grid">
 
           <!-- Contact Form -->
-          <div class="contact__form-wrapper">
+          <div class="contact-form">
             <h3>Send Us a Message</h3>
             <form class="contact-form" action="https://formspree.io/f/xpwzgvkl" method="POST" aria-label="Contact form">
               <div class="form-row">
@@ -173,21 +176,21 @@
           </div>
 
           <!-- Contact Info -->
-          <div class="contact__info">
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">&#9993;</div>
+          <div class="contact-info">
+            <div class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">&#9993;</div>
               <h4>Email</h4>
               <a href="mailto:info@lifeprotector.com">info@lifeprotector.com</a>
             </div>
 
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">&#9742;</div>
+            <div class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">&#9742;</div>
               <h4>Phone</h4>
               <a href="tel:+19548240700">954.824.0700</a>
             </div>
 
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">&#9872;</div>
+            <div class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">&#9872;</div>
               <h4>Address</h4>
               <address>
                 9429 Harding Avenue #293<br>
@@ -195,8 +198,8 @@
               </address>
             </div>
 
-            <div class="contact-card">
-              <div class="contact-card__icon" aria-hidden="true">&#9200;</div>
+            <div class="contact-detail">
+              <div class="contact-detail__icon" aria-hidden="true">&#9200;</div>
               <h4>Hours</h4>
               <p>Monday &ndash; Friday<br>9:00 AM &ndash; 5:00 PM ET</p>
             </div>
@@ -227,7 +230,7 @@
         </div>
         <form class="newsletter__form" action="https://formspree.io/f/mvgkjqwb" method="POST" aria-label="Newsletter subscription">
           <label for="newsletter-email" class="sr-only">Email address</label>
-          <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
+          <input type="email" id="newsletter-email" name="email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
           <button type="submit" class="btn btn--primary">Subscribe</button>
         </form>
       </div>
@@ -275,7 +278,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2025 LifeProtect, LLC. All rights reserved.</p>
+        <p>&copy; 2026 LifeProtect, LLC. All rights reserved.</p>
         <div class="footer__legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="privacy.html#terms">Terms of Use</a>
@@ -292,6 +295,6 @@
   </noscript>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

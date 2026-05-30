@@ -107,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (counters.length > 0) {
     if (prefersReducedMotion) {
       counters.forEach(el => {
-        el.textContent = (el.dataset.prefix || '') + parseInt(el.dataset.count, 10).toLocaleString() + (el.dataset.suffix || '');
+        const target = parseFloat(el.dataset.count);
+        if (isNaN(target)) return;
+        el.textContent = (el.dataset.prefix || '') + (target % 1 === 0 ? Math.round(target).toLocaleString() : target.toFixed(1)) + (el.dataset.suffix || '');
       });
     } else {
       const counterObserver = new IntersectionObserver((entries) => {
@@ -123,56 +125,75 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function animateCounter(el) {
-    const target = parseInt(el.dataset.count, 10);
+    const target = parseFloat(el.dataset.count);
+    if (isNaN(target)) return;
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
     const start = performance.now();
     function update(now) {
       const progress = Math.min((now - start) / COUNTER_DURATION, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = prefix + Math.round(target * eased).toLocaleString() + suffix;
+      const current = target * eased; el.textContent = prefix + (target % 1 === 0 ? Math.round(current).toLocaleString() : current.toFixed(1)) + suffix;
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
   }
 
-  // --- Form Submissions ---
+  // --- Form Submissions (Formspree) ---
   document.querySelectorAll('form').forEach(form => {
     if (form.classList.contains('newsletter__form')) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn ? btn.textContent : '';
-      if (btn) {
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-      }
-      setTimeout(() => {
-        if (btn) {
-          btn.textContent = 'Thank you!';
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
-            form.reset();
-          }, 2000);
+      const action = form.getAttribute('action');
+      if (!action || action === '#') return;
+      if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+      fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          if (btn) btn.textContent = 'Thank you!';
+          form.reset();
+          setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
+        } else {
+          if (btn) { btn.textContent = 'Error - try again'; btn.disabled = false; }
+          setTimeout(() => { if (btn) btn.textContent = originalText; }, 3000);
         }
-      }, 1000);
+      }).catch(() => {
+        if (btn) { btn.textContent = 'Error - try again'; btn.disabled = false; }
+        setTimeout(() => { if (btn) btn.textContent = originalText; }, 3000);
+      });
     });
   });
 
-  // Newsletter forms
+  // --- Newsletter Forms (Formspree) ---
   document.querySelectorAll('.newsletter__form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = form.querySelector('input');
       const btn = form.querySelector('button');
-      if (btn) {
-        btn.textContent = 'Subscribed!';
-        setTimeout(() => {
-          btn.textContent = 'Subscribe';
+      const action = form.getAttribute('action');
+      if (!action || action === '#') return;
+      fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          if (btn) btn.textContent = 'Subscribed!';
           if (input) input.value = '';
-        }, 2000);
-      }
+          setTimeout(() => { if (btn) btn.textContent = 'Subscribe'; }, 3000);
+        } else {
+          if (btn) btn.textContent = 'Error';
+          setTimeout(() => { if (btn) btn.textContent = 'Subscribe'; }, 3000);
+        }
+      }).catch(() => {
+        if (btn) btn.textContent = 'Error';
+        setTimeout(() => { if (btn) btn.textContent = 'Subscribe'; }, 3000);
+      });
     });
   });
 

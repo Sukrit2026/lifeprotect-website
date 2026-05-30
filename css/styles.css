@@ -242,6 +242,23 @@ p {
 .btn--sm { padding: 0.5rem 1.25rem; font-size: 0.9rem; }
 .btn--lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
 
+.btn--full { width: 100%; justify-content: center; }
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 2px;
+}
+
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* --- Top Bar --- */
 .top-bar {
   background: var(--color-primary-dark);
@@ -851,9 +868,9 @@ p {
   font-size: 0.9rem;
 }
 
-.breadcrumb a { color: rgba(255, 255, 255, 0.6); }
+.breadcrumb a { color: rgba(255, 255, 255, 0.85); }
 .breadcrumb a:hover { color: var(--color-white); }
-.breadcrumb span { color: rgba(255, 255, 255, 0.4); }
+.breadcrumb span { color: rgba(255, 255, 255, 0.75); }
 
 /* --- Timeline --- */
 .timeline {
@@ -1176,7 +1193,7 @@ p {
 
 .footer__about p {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
 }
 
@@ -1192,7 +1209,7 @@ p {
 .footer__col ul li { margin-bottom: 0.6rem; }
 
 .footer__col a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.9rem;
   transition: color var(--transition-fast);
 }
@@ -1208,7 +1225,7 @@ p {
   font-size: 0.85rem;
 }
 
-.footer__bottom a { color: rgba(255, 255, 255, 0.5); }
+.footer__bottom a { color: rgba(255, 255, 255, 0.7); }
 .footer__bottom a:hover { color: var(--color-white); }
 
 .footer__legal {
