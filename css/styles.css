@@ -4,32 +4,33 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --color-primary: #0A1628;
-  --color-primary-light: #162844;
-  --color-primary-dark: #060E1A;
-  --color-accent: #C41E3A;
-  --color-accent-light: #E8334F;
-  --color-accent-dark: #9A1830;
+  /* LifeProtect brand colors — matching original lifeprotector.com */
+  --color-primary: #282842;
+  --color-primary-light: #3A3A5C;
+  --color-primary-dark: #1A1A2E;
+  --color-accent: #0F79BD;
+  --color-accent-light: #1A8FD8;
+  --color-accent-dark: #0F5D99;
 
   /* Secondary */
-  --color-navy: #1B2D4F;
-  --color-steel: #3A5A8C;
-  --color-copper: #B87333;
+  --color-navy: #282842;
+  --color-steel: #0F79BD;
+  --color-copper: #E36159;
 
   /* Neutrals */
   --color-white: #FFFFFF;
-  --color-off-white: #F7F8FA;
-  --color-light-gray: #E4E7EC;
-  --color-medium-gray: #555555;
-  --color-text: #2D3748;
-  --color-text-light: #718096;
+  --color-off-white: #F5F5F5;
+  --color-light-gray: #EDEDED;
+  --color-medium-gray: #777777;
+  --color-text: #222529;
+  --color-text-light: #696969;
 
   /* Semantic */
-  --color-success: #28A745;
+  --color-success: #0CC485;
 
-  /* Typography */
-  --font-heading: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  /* Typography — Poppins to match original LifeProtect branding */
+  --font-heading: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --section-padding: 5rem 0;
