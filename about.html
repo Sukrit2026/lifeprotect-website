@@ -24,6 +24,26 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lifeprotector.com/"},
+        {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.lifeprotector.com/about.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -47,7 +67,10 @@
   <header class="header" role="banner">
     <div class="container">
       <a href="index.html" class="header__logo" aria-label="LifeProtect home">
-        <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="header__logo-img" width="48" height="48">
+        <picture>
+          <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+          <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="header__logo-img" width="48" height="48">
+        </picture>
       </a>
 
       <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
@@ -240,7 +263,7 @@
           <h3>Stay Informed</h3>
           <p>Get the latest updates on PPE innovation and domestic manufacturing.</p>
         </div>
-        <form class="newsletter__form" action="#" method="post" aria-label="Newsletter subscription">
+        <form class="newsletter__form" action="https://formspree.io/f/mvgkjqwb" method="POST" aria-label="Newsletter subscription">
           <label for="newsletter-email" class="sr-only">Email address</label>
           <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
           <button type="submit" class="btn btn--primary">Subscribe</button>
@@ -256,7 +279,10 @@
       <div class="footer__grid">
         <div class="footer__about">
           <a href="index.html" class="footer__logo" aria-label="LifeProtect home">
-            <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="footer__logo-img" width="44" height="44">
+            <picture>
+              <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+              <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="footer__logo-img" width="44" height="44">
+            </picture>
             <span class="footer__logo-name">LifeProtect, LLC</span>
           </a>
           <p>A private equity-backed holding company developing next-generation antimicrobial PPE and strengthening domestic health resilience.</p>
@@ -275,7 +301,7 @@
           <ul>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="privacy.html#terms">Terms of Use</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -290,7 +316,7 @@
         <p>&copy; 2025 LifeProtect, LLC. All rights reserved.</p>
         <div class="footer__legal">
           <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html#terms">Terms of Use</a>
         </div>
       </div>
     </div>

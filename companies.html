@@ -17,6 +17,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="images/lifeprotect-logo.png">
+
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lifeprotector.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Our Companies", "item": "https://www.lifeprotector.com/companies.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -38,7 +58,10 @@
   <header class="header">
     <div class="container">
       <a href="index.html" class="header__logo">
-        <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC" class="header__logo-img" width="48" height="48">
+        <picture>
+          <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+          <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC" class="header__logo-img" width="48" height="48">
+        </picture>
       </a>
       <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -163,8 +186,8 @@
         <h3>Stay Informed</h3>
         <p>Subscribe for the latest news on respiratory protection innovation and PPE supply.</p>
       </div>
-      <form class="newsletter__form">
-        <input type="email" class="newsletter__input" placeholder="Enter your email address" aria-label="Email address" required>
+      <form class="newsletter__form" action="https://formspree.io/f/mvgkjqwb" method="POST">
+        <input type="email" class="newsletter__input" name="email" placeholder="Enter your email address" aria-label="Email address" required>
         <button type="submit" class="btn btn--primary">Subscribe</button>
       </form>
     </div>
@@ -176,7 +199,10 @@
       <div class="footer__grid">
         <div class="footer__about">
           <a href="index.html" class="footer__logo">
-            <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC" class="footer__logo-img" width="44" height="44">
+            <picture>
+              <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+              <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC" class="footer__logo-img" width="44" height="44">
+            </picture>
             <span class="footer__logo-name">LifeProtect, LLC</span>
           </a>
           <p>LifeProtect, LLC is the parent company of Nexera Medical and MidAmerica Safety Corp, advancing American-made antimicrobial respiratory protection for healthcare, government, and industrial partners.</p>

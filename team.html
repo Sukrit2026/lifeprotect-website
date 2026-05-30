@@ -24,6 +24,26 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lifeprotector.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Our Team", "item": "https://www.lifeprotector.com/team.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -47,7 +67,10 @@
   <header class="header" role="banner">
     <div class="container">
       <a href="index.html" class="header__logo" aria-label="LifeProtect home">
-        <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="header__logo-img" width="48" height="48">
+        <picture>
+          <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+          <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="header__logo-img" width="48" height="48">
+        </picture>
       </a>
 
       <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
@@ -116,7 +139,10 @@
 
         <div class="leader-card animate-on-scroll">
           <div class="leader-card__photo">
-            <img src="images/mavara-agrawal.png" alt="Mavara Mirza Agrawal, MD" class="leader-card__img" width="140" height="170">
+            <picture>
+              <source srcset="images/mavara-agrawal.webp" type="image/webp">
+              <img src="images/mavara-agrawal.png" alt="Mavara Mirza Agrawal, MD" class="leader-card__img" width="140" height="170">
+            </picture>
           </div>
           <div class="leader-card__info">
             <h3>Mavara Mirza Agrawal, MD</h3>
@@ -132,7 +158,10 @@
 
         <div class="leader-card animate-on-scroll">
           <div class="leader-card__photo">
-            <img src="images/akhil-agrawal.png" alt="Akhil Agrawal" class="leader-card__img" width="140" height="170">
+            <picture>
+              <source srcset="images/akhil-agrawal.webp" type="image/webp">
+              <img src="images/akhil-agrawal.png" alt="Akhil Agrawal" class="leader-card__img" width="140" height="170">
+            </picture>
           </div>
           <div class="leader-card__info">
             <h3>Akhil Agrawal</h3>
@@ -148,7 +177,10 @@
 
         <div class="leader-card animate-on-scroll">
           <div class="leader-card__photo">
-            <img src="images/greg-burel.png" alt="Greg Burel" class="leader-card__img" width="140" height="170">
+            <picture>
+              <source srcset="images/greg-burel.webp" type="image/webp">
+              <img src="images/greg-burel.png" alt="Greg Burel" class="leader-card__img" width="140" height="170">
+            </picture>
           </div>
           <div class="leader-card__info">
             <h3>Greg Burel</h3>
@@ -161,7 +193,10 @@
 
         <div class="leader-card animate-on-scroll">
           <div class="leader-card__photo">
-            <img src="images/jason-radick.jpg" alt="Jason L. Radick, MD" class="leader-card__img" width="140" height="170">
+            <picture>
+              <source srcset="images/jason-radick.webp" type="image/webp">
+              <img src="images/jason-radick.jpg" alt="Jason L. Radick, MD" class="leader-card__img" width="140" height="170">
+            </picture>
           </div>
           <div class="leader-card__info">
             <h3>Jason L. Radick, MD</h3>
@@ -177,7 +212,10 @@
 
         <div class="leader-card animate-on-scroll">
           <div class="leader-card__photo">
-            <img src="images/john-zarkowsky.png" alt="John D. Zarkowsky" class="leader-card__img" width="140" height="170">
+            <picture>
+              <source srcset="images/john-zarkowsky.webp" type="image/webp">
+              <img src="images/john-zarkowsky.png" alt="John D. Zarkowsky" class="leader-card__img" width="140" height="170">
+            </picture>
           </div>
           <div class="leader-card__info">
             <h3>John D. Zarkowsky</h3>
@@ -213,7 +251,7 @@
           <h3>Stay Informed</h3>
           <p>Get the latest updates on PPE innovation and domestic manufacturing.</p>
         </div>
-        <form class="newsletter__form" action="#" method="post" aria-label="Newsletter subscription">
+        <form class="newsletter__form" action="https://formspree.io/f/mvgkjqwb" method="POST" aria-label="Newsletter subscription">
           <label for="newsletter-email" class="sr-only">Email address</label>
           <input type="email" id="newsletter-email" class="newsletter__input" placeholder="Enter your email" required autocomplete="email">
           <button type="submit" class="btn btn--primary">Subscribe</button>
@@ -229,7 +267,10 @@
       <div class="footer__grid">
         <div class="footer__about">
           <a href="index.html" class="footer__logo" aria-label="LifeProtect home">
-            <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="footer__logo-img" width="44" height="44">
+            <picture>
+              <source srcset="images/lifeprotect-logo.webp" type="image/webp">
+              <img src="images/lifeprotect-logo.png" alt="LifeProtect, LLC logo" class="footer__logo-img" width="44" height="44">
+            </picture>
             <span class="footer__logo-name">LifeProtect, LLC</span>
           </a>
           <p>A private equity-backed holding company developing next-generation antimicrobial PPE and strengthening domestic health resilience.</p>
@@ -248,7 +289,7 @@
           <ul>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="privacy.html#terms">Terms of Use</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -263,7 +304,7 @@
         <p>&copy; 2026 LifeProtect, LLC. All rights reserved.</p>
         <div class="footer__legal">
           <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html#terms">Terms of Use</a>
         </div>
       </div>
     </div>
