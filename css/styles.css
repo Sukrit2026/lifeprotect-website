@@ -33,7 +33,7 @@
   --font-body: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
-  --section-padding: 5rem 0;
+  --section-padding: 3rem 0;
   --container-width: 1200px;
   --container-padding: 0 1.5rem;
 
@@ -132,7 +132,7 @@ p {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
 }
 
 .section-header p {
@@ -721,7 +721,7 @@ a:focus-visible {
   background: linear-gradient(135deg, var(--color-navy) 0%, #1A1A2E 100%);
   color: var(--color-white);
   text-align: center;
-  padding: 5rem 0;
+  padding: 3rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -776,7 +776,8 @@ a:focus-visible {
 }
 
 .team-preview {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .team-card {
